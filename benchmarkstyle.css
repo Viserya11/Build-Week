@@ -16,7 +16,7 @@ html {
 
 img {
   width: 15%;
-  margin-left: 15%;
+  margin-left: 10%;
   margin-top: 3%;
 }
 
@@ -39,6 +39,7 @@ img {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 5px;
+  margin-left: 120px;
   padding: 2% 0;
 }
 
@@ -50,6 +51,12 @@ img {
   border-radius: 8px;
 }
 
-input[type="radio"] {
-  visibility: hidden;
+.radio-btn {
+  width: 250px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 5%;
 }
