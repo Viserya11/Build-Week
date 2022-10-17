@@ -69,11 +69,17 @@ p {
   filter: brightness(1);
 }
 
+.comment-area {
+  width: 50vw;
+}
+
 #input-field {
   width: 300px;
   background-color: unset;
   border: none;
   color: white;
+  margin-bottom: 8px;
+  padding-left: 10%;
 }
 
 #break-line {
