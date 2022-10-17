@@ -8,48 +8,46 @@
     <title>Welcome Page</title>
   </head>
   <body>
-    <div id="mainbg"></div>
-
     <div class="logo">
       <img alt="Epicode logo" src="./assets/epicode_logo.png" />
     </div>
 
-    <h1 class="header">
-      Welcome to <br />
-      your exam
-    </h1>
+    <div class="container">
+      <div class="item header">
+        <h1>Welcome to</h1>
+        <h2>your exam</h2>
+      </div>
 
-    <h2></h2>
+      <div class="item instruct">
+        <h3>Instructions</h3>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+          <br />questions, so don't worry if you're unsure of a few of them.
+        </p>
+        <ul>
+          <li>
+            Each question is <b>timed</b> and can only be <b>answered once.</b>
+          </li>
+          <br />
+          <li>
+            Changing browser tab or opening other windows will
+            <b>invalidate the question.</b>
+          </li>
+          <br />
+          <li>This exam will take approx. <b>0-5 minutes.</b></li>
+        </ul>
+      </div>
 
-    <div class="instruct">
-      <h3>Instructions</h3>
-      <p>
-        We don't expect most engineers to know the answers to all of these
-        <br />questions, so don't worry if you're unsure of a few of them.
-      </p>
-      <ul>
-        <li>
-          Each question is <b>timed</b> and can only be <b>answered once.</b>
-        </li>
-        <br />
-        <li>
-          Changing browser tab or opening other windows will
-          <b>invalidate the question.</b>
-        </li>
-        <br />
-        <li>This exam will take approx. <b>0-5 minutes.</b></li>
-      </ul>
-    </div>
+      <div id="cbox">
+        <input type="checkbox" class="check-box" />
+        <label for="checkbox">
+          I promise to answer myself without help from anyone</label
+        >
+      </div>
 
-    <div class="checkbox">
-      <input type="checkbox" id="checkbox" class="check-box" />
-      <label for="checkbox">
-        I promise to answer myself without help from anyone</label
-      >
-    </div>
-
-    <div class="button">
-      <input type="button" value="PROCEED" id="button" class="proceedbtn" />
+      <div class="item btn">
+        <input type="button" value="PROCEED" id="button" class="button" />
+      </div>
     </div>
   </body>
 </html>
