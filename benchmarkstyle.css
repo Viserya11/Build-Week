@@ -38,25 +38,57 @@ img {
 .answers {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 5px;
-  margin-left: 120px;
-  padding: 2% 0;
-}
-
-.btn {
-  font-family: Poppins;
-  height: 40px;
-  background-color: rgba(25, 25, 25 0.1);
-  color: rgb(220, 220, 220);
-  border-radius: 8px;
+  gap: 10px;
+  margin-left: 80px;
+  padding: 5% 0;
 }
 
 .radio-btn {
   width: 250px;
   height: 40px;
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
   text-align: center;
+  font-family: Inter;
   padding-top: 5%;
+  box-shadow: 1px 0px 1px 1px rgba(255, 255, 255);
+  cursor: pointer;
+}
+
+.radio-btn input:checked {
+  background-color: aqua;
+}
+
+.answers input {
+  justify-content: center;
+}
+
+.timer {
+  display: flex;
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  line-height: 85px;
+  color: rgb(232, 228, 233);
+  background-color: transparent;
+  border-radius: 50%;
+  border: 10px solid rgba(246, 246, 246, 0.3);
+  position: absolute;
+  font-family: Outfit;
+  margin-top: 2%;
+  margin-left: 80%;
+}
+
+.numofq {
+  display: block;
+  width: 120px;
+  height: 90px;
+  justify-content: center;
+  color: rgb(232, 228, 233);
+  background-color: transparent;
+  position: absolute;
+  font-family: Outfit;
+  margin-left: 45%;
+  margin-right: 45%;
+  margin-top: 43%;
 }
