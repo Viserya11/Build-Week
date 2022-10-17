@@ -1,0 +1,55 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url(/assets/bg.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 15%;
+  margin-left: 15%;
+  margin-top: 3%;
+}
+
+.container {
+  display: block;
+  width: 60%;
+  text-align: center;
+  margin: 10% auto;
+  color: rgb(232, 228, 233);
+}
+
+.questions {
+  font-weight: 400;
+  font-family: Outfit;
+  text-align: center;
+  padding-top: 1%;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 5px;
+  padding: 2% 0;
+}
+
+.btn {
+  font-family: Poppins;
+  height: 40px;
+  background-color: rgba(25, 25, 25 0.1);
+  color: rgb(220, 220, 220);
+  border-radius: 8px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
