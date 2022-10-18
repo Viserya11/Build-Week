@@ -1,4 +1,4 @@
-const totalCorrect = 34;
+const totalCorrect = 63;
 
 let correctPercentage = document.getElementById("correct-percentage");
 let wrongPercentage = document.getElementById("wrong-percentage");
@@ -6,19 +6,21 @@ console.log(correctPercentage);
 let correctCounter = 0;
 let wrongCounter = 0;
 const countCorrect = setInterval(function () {
-  if (correctCounter == totalCorrect) {
-    clearInterval(countCorrect);
-  } else {
+  if (correctCounter !== totalCorrect) {
     correctCounter += 1;
-    const remain = 100 - totalCorrect;
-    console.log(remain);
-    if (wrongCounter < remain) {
-      wrongCounter += 1;
-      console.log(wrongCounter);
-      wrongPercentage.innerHTML = wrongCounter + "%";
-    }
     correctPercentage.innerHTML = correctCounter + "%";
   }
+  const remain = 100 - totalCorrect;
+  console.log(remain);
+  if (wrongCounter < remain) {
+    wrongCounter += 1;
+    console.log(wrongCounter);
+    wrongPercentage.innerHTML = wrongCounter + "%";
+  }
+  if (correctCounter === totalCorrect && wrongCounter === 100 - totalCorrect) {
+    clearInterval(countCorrect);
+  }
+
   // console.log("correct counter in setInterval: " + correctCounter);
 }, 30);
 console.log("correct counter: " + correctCounter);
@@ -36,7 +38,7 @@ let valueContainer = document.querySelector(".value-container");
 
 let progressValue = 0;
 let progressEndValue = totalCorrect;
-let speed = 50;
+let speed = 30;
 
 let progress = setInterval(() => {
   progressValue++;
