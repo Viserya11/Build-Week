@@ -13,93 +13,32 @@
   <body>
     <div class="bg">
       <div class="timer"><span>seconds</span></div>
-      <div class="numofq">QUESTION 1/5</div>
-      <div logo-container>
+      <div class="logo-container">
         <img src="/assets/epicode_logo.png" alt="epicode logo" />
         <div class="container">
-          <div class="questions"><h1 id="h1">blabla</h1></div>
-          <div class="answers">
-            <label class="radio-btn" for="answer"
-              ><input type="radio" name="answer" id="" />
-              <span class="checkmark"></span
-            ></label>
-            <label class="radio-btn" for="radio-btn"
-              ><input type="radio" name="answer" id="" />
-              <span class="checkmark"></span
-            ></label>
-            <label class="radio-btn" for="radio-btn"
-              ><input type="radio" name="answer" id="" />
-              <span class="checkmark"></span
-            ></label>
-            <label class="radio-btn" for="radio-btn"
-              ><input type="radio" name="answer" id="" />
-              <span class="checkmark"></span
-            ></label>
+          <div class="flexitems">
+            <h1 id="question">What is the answer to this question?</h1>
+            <div class="answers">
+              <div class="choice-container">
+                <p class="answer-text" data-number="1">Choice 1</p>
+              </div>
+              <div class="choice-container">
+                <p class="answer-text" data-number="2">Choice 2</p>
+              </div>
+            </div>
+            <div class="choice-container">
+              <p class="answer-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+              <p class="answer-text" data-number="4">Choice 4</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="questionnum">
+        <p id="progressText" class="hud-prefix">Question</p>
+      </div>
     </div>
-    <script>
-      const questions = [
-        {
-          category: "Science: Computers",
-          type: "multiple",
-          difficulty: "easy",
-          question: "What does CPU stand for?",
-          correct_answer: "Central Processing Unit",
-          incorrect_answers: [
-            "Central Process Unit",
-            "Computer Personal Unit",
-            "Central Processor Unit",
-          ],
-        },
-        {
-          category: "Science: Computers",
-          type: "multiple",
-          difficulty: "easy",
-          question:
-            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-          correct_answer: "Final",
-          incorrect_answers: ["Static", "Private", "Public"],
-        },
-        {
-          category: "Science: Computers",
-          type: "boolean",
-          difficulty: "easy",
-          question: "The logo for Snapchat is a Bell.",
-          correct_answer: "False",
-          incorrect_answers: ["True"],
-        },
-        {
-          category: "Science: Computers",
-          type: "boolean",
-          difficulty: "easy",
-          question:
-            "Pointers were not used in the original C programming language; they were added later on in C++.",
-          correct_answer: "False",
-          incorrect_answers: ["True"],
-        },
-        {
-          category: "Science: Computers",
-          type: "multiple",
-          difficulty: "easy",
-          question:
-            "What is the most preferred image format used for logos in the Wikimedia database?",
-          correct_answer: ".svg",
-          incorrect_answers: [".png", ".jpeg", ".gif"],
-        },
-      ];
-
-      let questionsDisplay = function () {
-        for (let i = 0; i < questions.length; i++) {
-          let randomQuestion = questions[i].question;
-          document.getElementById("h1").innerHTML = randomQuestion;
-        }
-        return randomQuestion;
-      };
-      questionsDisplay();
-
-      //to-do: deleting html elements, creating them with q for loop, continue for timer
-    </script>
+    <script src="./questions.js"></script>
   </body>
 </html>

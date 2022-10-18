@@ -35,7 +35,7 @@ img {
   padding-top: 1%;
 }
 
-.answers {
+.answer {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px;
@@ -43,24 +43,33 @@ img {
   padding: 5% 0;
 }
 
-.radio-btn {
+#question {
+  font-family: Outfit;
+}
+
+.choice-container {
+  display: flex;
+  justify-content: center;
   width: 250px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
+  font-family: Inter;
+  font-size: 16px;
+  color: aliceblue;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  box-shadow: 2px -1px 1px 0px rgba(255, 255, 255);
+}
+
+.choice-container:hover {
+  background-color: rgba(227, 46, 203, 0.595);
+  border-radius: 50px;
   text-align: center;
   font-family: Inter;
-  padding-top: 5%;
-  box-shadow: 1px 0px 1px 1px rgba(255, 255, 255);
+  color: aliceblue;
+  padding-top: 0;
   cursor: pointer;
-}
-
-.radio-btn input:checked {
-  background-color: aqua;
-}
-
-.answers input {
-  justify-content: center;
 }
 
 .timer {
@@ -79,16 +88,14 @@ img {
   margin-left: 80%;
 }
 
-.numofq {
-  display: block;
+.questionnum {
   width: 120px;
-  height: 90px;
+  height: 20px;
   justify-content: center;
   color: rgb(232, 228, 233);
   background-color: transparent;
-  position: absolute;
   font-family: Outfit;
+  margin-top: -100px;
   margin-left: 45%;
   margin-right: 45%;
-  margin-top: 43%;
 }
