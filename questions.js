@@ -39,8 +39,16 @@ let questions = [
     choice4: "Computer Style Sheet",
     answer: 2,
   },
+  {
+    question:
+      "What is the code name for the mobile operating system Android 7.0?",
+    choice1: "Nougat",
+    choice2: "Ice Cream Sandwich",
+    choice3: "Jelly Bean",
+    choice4: "Marshmallow",
+  },
 ];
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 5;
 startGame = () => {
   questionCounter = 0;
   score = 0;
