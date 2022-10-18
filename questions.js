@@ -46,6 +46,7 @@ let questions = [
     choice2: "Ice Cream Sandwich",
     choice3: "Jelly Bean",
     choice4: "Marshmallow",
+    answer: 1,
   },
 ];
 const MAX_QUESTIONS = 5;
