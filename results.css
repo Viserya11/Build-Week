@@ -218,3 +218,36 @@ circle {
   box-shadow: 0 0 20px white;
   cursor: pointer;
 }
+
+.container {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgb(15, 11, 31);
+  display: grid;
+  place-items: center;
+}
+.circular-progress {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgb(15, 11, 31);
+}
+.value-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  color: #231c3d;
+}

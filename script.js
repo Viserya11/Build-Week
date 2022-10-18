@@ -1,4 +1,4 @@
-const totalCorrect = 66;
+const totalCorrect = 34;
 
 let correctPercentage = document.getElementById("correct-percentage");
 let wrongPercentage = document.getElementById("wrong-percentage");
@@ -11,13 +11,15 @@ const countCorrect = setInterval(function () {
   } else {
     correctCounter += 1;
     const remain = 100 - totalCorrect;
+    console.log(remain);
     if (wrongCounter < remain) {
       wrongCounter += 1;
+      console.log(wrongCounter);
       wrongPercentage.innerHTML = wrongCounter + "%";
     }
     correctPercentage.innerHTML = correctCounter + "%";
   }
-  console.log("correct counter in setInterval: " + correctCounter);
+  // console.log("correct counter in setInterval: " + correctCounter);
 }, 30);
 console.log("correct counter: " + correctCounter);
 
@@ -29,5 +31,20 @@ if (totalCorrect < 60) {
   innerTextFail.classList.remove("hidden");
 }
 
-let ring = document.getElementsByTagName("circle");
-console.log(ring);
+let progressBar = document.querySelector(".circular-progress");
+let valueContainer = document.querySelector(".value-container");
+
+let progressValue = 0;
+let progressEndValue = totalCorrect;
+let speed = 50;
+
+let progress = setInterval(() => {
+  progressValue++;
+  progressBar.style.background = `conic-gradient(
+      aqua ${progressValue * 3.6}deg,
+      #D20094 ${progressValue * 3.6}deg
+  )`;
+  if (progressValue == progressEndValue) {
+    clearInterval(progress);
+  }
+}, speed);
