@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Welcome Page</title>
+    <title>Welcome Page Feature</title>
   </head>
   <body>
-    <div class="logo">
-      <img alt="Epicode logo" src="./assets/epicode_logo.png" />
-    </div>
-
     <div class="container">
+      <div class="logo">
+        <img alt="Epicode logo" src="./assets/epicode_logo.png" />
+      </div>
+
       <div class="item header">
         <h1>Welcome to</h1>
         <h2>your exam</h2>
@@ -37,17 +37,23 @@
           <li>This exam will take approx. <b>0-5 minutes.</b></li>
         </ul>
       </div>
-
-      <div id="cbox">
-        <input type="checkbox" class="check-box" />
-        <label for="checkbox">
-          I promise to answer myself without help from anyone</label
-        >
-      </div>
-
-      <div class="item btn">
+      <div class="item-wrapper">
+        <div id="cbox" class="item">
+          <input
+            type="checkbox"
+            class="check-box"
+            id="check"
+            value="Please tick to Proceed"
+            onchange="checked()"
+          />
+          <label for="checkbox">
+            I promise to answer myself without help from anyone</label
+          >
+        </div>
         <input type="button" value="PROCEED" id="button" class="button" />
       </div>
     </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>

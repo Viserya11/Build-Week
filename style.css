@@ -12,23 +12,27 @@ body {
   font-family: "outfit", sans-serif;
 }
 
-.logo img {
+.logo {
   margin-top: 48px;
-  width: 13%;
-  height: 35px;
+  width: 150px;
+  height: 80px;
   margin-top: 50px;
-  margin-left: 9.1%;
+  margin-left: 9%;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .item {
   margin-left: 9%;
-  margin-bottom: 0;
   padding: 0;
 }
 
@@ -37,7 +41,7 @@ h1 {
   color: #e7e7eb;
   font-size: 5.6em;
   font-weight: lighter;
-  margin-top: 65px;
+  margin-top: 43 px;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -70,14 +74,10 @@ h2 {
   color: #b8bbc7;
   font-weight: 300;
   margin-top: 50px;
+  margin-bottom: 70px;
   line-height: 1em;
   font-size: 18px;
   font-family: "Inter", sans-serif;
-}
-
-#cbox {
-  margin-left: 10.6%;
-  margin-top: 5.4%;
 }
 
 label {
@@ -100,25 +100,29 @@ label {
   cursor: pointer;
 }
 
-.btn {
-  display: inline-block;
-  margin-left: 73%;
-}
-
 .button {
-  position: absolute;
-  top: 82.5%;
   font-weight: bold;
-  border: none;
-  width: 240px;
+  border: 1px;
+  width: 210px;
   height: 61px;
   background-color: #01ffff;
   text-align: center;
-  font-size: 25px;
+  font-size: 22px;
   color: #143e61;
-  background: #01ffff;
-  box-shadow: 0 0 40px #01ffff;
   border-color: #01ffff;
   cursor: pointer;
   font-family: "outfit", sans-serif;
+}
+
+.button:hover {
+  background-color: #01ffff;
+  box-shadow: 0 0 40px #01ffff;
+}
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin-left: 30px;
 }
