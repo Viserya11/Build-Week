@@ -10,6 +10,25 @@ let acceptingAnswers = true;
 let questionCounter = 0;
 let availableQuestions = [];
 
+let countdownBar = document.querySelector(".circular-progress");
+let valueContainer = document.querySelector(".value-container");
+
+let countdownValue = 60;
+let countdownEndValue = 0;
+let speed = 1000;
+
+let countdown = setInterval(() => {
+  countdownValue--;
+  valueContainer.textContent = `${countdownValue}`;
+  countdownBar.style.background = `conic-gradient(
+      #900080 ${countdownValue * 6}deg,
+      #ebbaee ${countdownValue * 6}deg
+  )`;
+  if (countdownValue == countdownEndValue) {
+    getNewQuestion();
+  }
+}, speed);
+
 //using last week's array based on group decision, modified to fit the code
 
 let questions = [
@@ -91,6 +110,9 @@ getNewQuestion = () => {
 
   availableQuestions.splice(questionsIndex, 1);
   acceptingAnswers = true;
+
+  countdownValue = 60;
+  countdownEndValue = 0;
 };
 
 //if you click on the right answer it applies correct otherwise incorrect, didn't specify in css
@@ -120,29 +142,9 @@ choices.forEach((choice) => {
   });
 });
 
-let countdownBar = document.querySelector(".circular-progress");
-let valueContainer = document.querySelector(".value-container");
-
-let countdownValue = 60;
-let countdownEndValue = 0;
-let speed = 1000;
-
-let countdown = setInterval(() => {
-  countdownValue--;
-  valueContainer.textContent = `${countdownValue}`;
-  countdownBar.style.background = `conic-gradient(
-      #900080 ${countdownValue * 6}deg,
-      #ebbaee ${countdownValue * 6}deg
-  )`;
-  if (countdownValue == countdownEndValue) {
-    clearInterval(countdown);
-  }
-}, speed);
-
 newButton.addEventListener("click", () => {
   getNewQuestion();
-  clearInterval(countdown);
-  {
-  }
+  countdownValue = 60;
+  countdownEndValue = 0;
 });
 startGame();
