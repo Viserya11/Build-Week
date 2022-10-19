@@ -3,6 +3,7 @@
 const question = document.querySelector("#question");
 const choices = Array.from(document.querySelectorAll(".answer-text"));
 const progressText = document.querySelector("#progressText");
+const newButton = document.querySelector("#nextbtn");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -119,6 +120,9 @@ choices.forEach((choice) => {
   });
 });
 
+newButton.addEventListener("click", () => {
+  getNewQuestion();
+});
 startGame();
 
 let countdownBar = document.querySelector(".circular-progress");
