@@ -120,11 +120,6 @@ choices.forEach((choice) => {
   });
 });
 
-newButton.addEventListener("click", () => {
-  getNewQuestion();
-});
-startGame();
-
 let countdownBar = document.querySelector(".circular-progress");
 let valueContainer = document.querySelector(".value-container");
 
@@ -143,3 +138,11 @@ let countdown = setInterval(() => {
     clearInterval(countdown);
   }
 }, speed);
+
+newButton.addEventListener("click", () => {
+  getNewQuestion();
+  clearInterval(countdown);
+  {
+  }
+});
+startGame();
