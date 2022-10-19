@@ -44,13 +44,15 @@
             class="check-box"
             id="check"
             value="Please tick to Proceed"
-            onchange="checked()"
+            onclick="isChecked()"
           />
           <label for="checkbox">
             I promise to answer myself without help from anyone</label
           >
         </div>
-        <input type="button" value="PROCEED" id="button" class="button" />
+        <button id="button" class="button" onclick="isDisabled()">
+          PROCEED
+        </button>
       </div>
     </div>
 
