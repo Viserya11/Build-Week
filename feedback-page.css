@@ -6,7 +6,7 @@ body {
 
 #container {
   background-image: url("./assets/bg.jpg");
-  color: white;
+  color: #e7e7eb;
   height: 100vh;
   background-size: cover;
 }
@@ -28,11 +28,16 @@ body {
   padding-right: 5%;
 }
 
-h1 {
+.h1 {
+  width: 100%;
+  height: 20vh;
   margin-bottom: 0;
   font-family: Outfit;
-  font-weight: 900;
-  font-size: 60px;
+  font-weight: bold;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 span {
@@ -40,46 +45,62 @@ span {
 }
 
 p {
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: Outfit;
+  font-weight: 300;
+  font-size: 24px;
   text-align: center;
   line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .star-widget {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* filter: brightness(0%); */
 }
 
-.stars {
+#SVG {
+  display: none;
+}
+
+svg {
   padding: 0.5vw;
   user-select: none;
-  cursor: pointer;
-
-  filter: hue-rotate(62deg);
-  filter: contrast(0.3);
-  filter: brightness(0);
   max-width: 100px;
+  cursor: pointer;
 }
 
-.stars:hover {
-  filter: contrast(1);
-  filter: brightness(1);
+.icon-test {
+  max-width: 53px;
+  /* padding: 0.2vw; */
+  filter: url(#test);
+  transition: padding 0.5s ease;
+}
+
+.hover {
+  padding: 0.5vw;
+  cursor: pointer;
+  filter: url(#id-of-your-filter);
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .comment-area {
   width: 50vw;
+  user-select: none;
 }
 
 #input-field {
-  width: 300px;
+  width: 100%;
   background-color: unset;
   border: none;
-  color: white;
+  color: #e7e7eb;
   margin-bottom: 8px;
-  padding-left: 10%;
+  padding-left: 8.5%;
 }
 
 #break-line {
@@ -89,17 +110,22 @@ p {
 }
 
 #action-button {
+  margin-top: 10%;
   width: 200px;
   height: 60px;
   font-family: Outfit;
   font-weight: bold;
   font-size: 16px;
-  background: #01ffff;
+  background: #1daabb;
   border: none;
   transition: box-shadow 0.5s ease;
 }
 
-#action-button:hover {
-  box-shadow: 0 0 20px #01ffff;
+.enabled {
+  transition: box-shadow 0.5s ease;
+}
+
+.enabled:hover {
+  box-shadow: 0 0 25px #01ffff;
   cursor: pointer;
 }
