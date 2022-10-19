@@ -81,11 +81,11 @@ h2 {
 }
 
 label {
-  color: #b8bbc7;
-  font-size: 16.5px;
+  color: #ffffff;
+  font-size: 14px;
   padding-left: 15px;
   font-family: "Inter", sans-serif;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .check-box {
@@ -100,24 +100,38 @@ label {
   cursor: pointer;
 }
 
-.button {
+#inactivebtn {
   font-weight: bold;
-  border: 1px;
-  width: 210px;
+  border: none;
+  width: 200px;
   height: 61px;
-  background-color: #01ffff;
+  background: #1daabb;
+  color: #143e61;
   text-align: center;
   font-size: 22px;
-  color: #143e61;
-  border-color: #01ffff;
-  cursor: pointer;
-  font-family: "outfit", sans-serif;
+  font-family: "outfit";
+  transition: box-shadow 0.5s ease;
 }
 
-.button:hover {
+.disabled {
+  pointer-events: none;
+}
+
+.enabledbtn {
+  transition: box-shadow 0.5s ease;
+}
+
+.enabledbtn:hover {
+  box-shadow: 0 0 40px #01ffff;
+  cursor: pointer;
+}
+
+/*
+.button{
   background-color: #01ffff;
   box-shadow: 0 0 40px #01ffff;
 }
+*/
 
 .item-wrapper {
   display: flex;

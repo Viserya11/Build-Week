@@ -1,22 +1,19 @@
 const check = document.getElementById("check")
-let btn = document.getElementById("button")
+let btn = document.getElementById("inactivebtn")
 
-btn.disabled = true
+check.addEventListener("click", () => {
+  console.log(`the button is ${btn}`)
+  btn.style.backgroundColor = "#01ffff"
+  btn.classList.add("enabledbtn")
+})
 
-function isChecked() {
-  if (check.checked) {
-    btn.disabled = false
-  } else {
-    btn.disabled = true
+const isChecked = () => {
+  if (check.checked === false) {
   }
 }
 
-function isDisabled() {
-  if (btn.disabled) {
-    console.log("button is disabled")
-  } else {
-    console.log("button is active")
-  }
+/*const addBoxShadow = () => {
+  btn.classList.toggle("activebtn")
 }
-
-//btn.addEventListener("click", isDisabled())
+check.addEventListener("click", activebtn)
+*/
