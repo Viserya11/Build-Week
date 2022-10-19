@@ -75,7 +75,7 @@ getNewQuestion = () => {
   }
   //otherwise shows the number of the next question out of the total which is five in this case, also increments it with one every time
   questionCounter++;
-  progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+  progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
 
   //makes the questions appear in a random order on each refresh, uses the questions from the array
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -115,7 +115,7 @@ choices.forEach((choice) => {
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
-    }, 100);
+    }, 60000);
   });
 });
 
@@ -132,7 +132,7 @@ let countdown = setInterval(() => {
   countdownValue--;
   valueContainer.textContent = `${countdownValue}`;
   countdownBar.style.background = `conic-gradient(
-      #f4e5ef ${countdownValue * 6}deg,
+      #900080 ${countdownValue * 6}deg,
       #ebbaee ${countdownValue * 6}deg
   )`;
   if (countdownValue == countdownEndValue) {

@@ -52,7 +52,7 @@ img {
   justify-content: center;
   width: 250px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   font-family: Inter;
   font-size: 16px;
@@ -63,7 +63,7 @@ img {
 }
 
 .choice-container:hover {
-  background-color: rgba(227, 46, 203, 0.595);
+  background-color: #900080;
   border-radius: 50px;
   text-align: center;
   font-family: Inter;
@@ -95,9 +95,8 @@ img {
   color: rgb(232, 228, 233);
   background-color: transparent;
   font-family: Outfit;
-  margin-top: -30px;
-  margin-left: 45%;
-  margin-right: 45%;
+  margin-top: -45px;
+  margin-left: 25%;
 }
 
 .timercontainer {
@@ -130,7 +129,28 @@ img {
 }
 .value-container {
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 30px;
-  color: #eec9eba3;
+  color: #ffffff;
+}
+
+.nextbtn {
+  display: block;
+  width: 110px;
+  height: 30px;
+  justify-content: center;
+  text-align: center;
+  background-color: #3ee0e0;
+  color: rgb(16, 60, 122);
+  font-family: Outfit;
+  font-size: 16px;
+  margin-top: -60px;
+  padding-top: 10px;
+  transition: 0.5s;
+  margin-left: 65%;
+}
+
+.nextbtn:hover {
+  background-color: #00ffff;
+  cursor: pointer;
 }
