@@ -24,7 +24,7 @@ img {
   display: block;
   width: 60%;
   text-align: center;
-  margin: 10% auto;
+  margin: 5% auto;
   color: rgb(232, 228, 233);
 }
 
@@ -95,7 +95,42 @@ img {
   color: rgb(232, 228, 233);
   background-color: transparent;
   font-family: Outfit;
-  margin-top: -100px;
+  margin-top: -30px;
   margin-left: 45%;
   margin-right: 45%;
+}
+
+.timercontainer {
+  margin-left: 80%;
+  height: 15vh;
+  aspect-ratio: 1/1;
+  background-color: #f4e5ef;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 6px #231c3d99;
+  display: grid;
+  place-items: center;
+}
+.circular-progress {
+  position: relative;
+  height: 15vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  /* background-color: linear-gradient(to bottom right, #d20094, #900080); */
+  background-color: #642568;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 15px 1px #231c3d;
+}
+.value-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  color: #eec9eba3;
 }
