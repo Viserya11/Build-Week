@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@300;400;500;700&display=swap");
+
+body {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: "outfit", sans-serif;
+}
+
+.logo {
+  margin-top: 48px;
+  width: 150px;
+  height: 80px;
+  margin-top: 50px;
+  margin-left: 9%;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.item {
+  margin-left: 9%;
+  padding: 0;
+}
+
+h1 {
+  display: block;
+  color: #e7e7eb;
+  font-size: 5.2em;
+  font-weight: lighter;
+  margin-top: 43 px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+h2 {
+  display: block;
+  color: #e7e7eb;
+  line-height: 0px;
+  margin-top: 0;
+  padding-top: 10px;
+  font-size: 5.3em;
+  font-weight: bolder;
+}
+
+.instruct h3 {
+  color: #c2138c;
+  margin-top: 35px;
+  font-size: 2.1em;
+  font-weight: bolder;
+  line-height: 0.2em;
+}
+
+.instruct p {
+  color: #b8bbc7;
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+}
+
+.instruct ul {
+  color: #b8bbc7;
+  font-weight: 300;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  line-height: 1em;
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+}
+
+label {
+  color: #ffffff;
+  font-size: 14px;
+  padding-left: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+.check-box {
+  color: #0b113b;
+  width: 21px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  border: 2px solid #ddd;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+#inactivebtn {
+  font-weight: bold;
+  border: none;
+  width: 200px;
+  height: 61px;
+  background: #1daabb;
+  color: #143e61;
+  text-align: center;
+  font-size: 22px;
+  font-family: "outfit";
+  transition: box-shadow 0.5s ease;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.enabledbtn {
+  transition: box-shadow 0.5s ease;
+}
+
+.enabledbtn:hover {
+  box-shadow: 0 0 40px #01ffff;
+  cursor: pointer;
+}
+
+/*
+.button{
+  background-color: #01ffff;
+  box-shadow: 0 0 40px #01ffff;
+}
+*/
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin-left: 30px;
+}
