@@ -51,7 +51,7 @@ getNewQuestion = () => {
   //the end redirects the page to the next one (results) after it reached the limit of questions, keeps track of points
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
-    // return window.location.assign("./results.html");
+    return window.location.assign("./results.html");
   }
   //otherwise shows the number of the next question out of the total which is five in this case, also increments it with one every time
   questionCounter++;
