@@ -30,6 +30,7 @@ stars.forEach((star, hoveredIndex) => {
           inputField.addEventListener("input", () => {
             proceed.style.backgroundColor = "#01ffff";
             proceed.classList.add("enabled");
+            return window.location.assign("./start.html");
           });
         });
       });
