@@ -5,7 +5,6 @@ check.addEventListener("click", () => {
   console.log(`the button is ${btn}`);
   btn.style.backgroundColor = "#01ffff";
   btn.classList.add("enabledbtn");
-  return window.location.assign("./benchmark page.html");
 });
 
 const isChecked = () => {
