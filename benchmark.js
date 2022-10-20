@@ -1,3 +1,7 @@
+window.onload = function () {
+  startGame();
+};
+
 //declaring the variables later used in the code, targeting html elements
 
 const question = document.querySelector("#question");
@@ -10,6 +14,8 @@ let acceptingAnswers = true;
 let questionCounter = 0;
 let availableQuestions = [];
 
+//countdown timer keeping track how many seconds the user has to answer the question before moving to the next one automatically
+
 let countdownBar = document.querySelector(".circular-progress");
 let valueContainer = document.querySelector(".value-container");
 
@@ -21,13 +27,82 @@ let countdown = setInterval(() => {
   countdownValue--;
   valueContainer.textContent = `${countdownValue}`;
   countdownBar.style.background = `conic-gradient(
-      #900080 ${countdownValue * 6}deg,
+      #ffffff ${countdownValue * 6}deg,
       #ebbaee ${countdownValue * 6}deg
   )`;
   if (countdownValue == countdownEndValue) {
     getNewQuestion();
   }
 }, speed);
+
+//declaring the number of questions for the counter, also the points given for each so it can be easily implemented on the results page
+
+const MAX_QUESTIONS = 5;
+const SCORE_POINTS = 20;
+
+startGame = () => {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
+  getNewQuestion();
+};
+
+getNewQuestion = () => {
+  //the end redirects the page to the next one (results) after it reached the limit of questions, keeps track of points
+  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    localStorage.setItem("mostRecentScore", score);
+    // return window.location.assign("./results.html");
+  }
+  //otherwise shows the number of the next question out of the total which is five in this case, also increments it with one every time
+  questionCounter++;
+  progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
+
+  //makes the questions appear in a random order on each refresh, uses the questions from the array
+  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionsIndex];
+  question.innerText = currentQuestion.question;
+  console.log("This is the current question object: ", currentQuestion);
+  console.log(`The ${currentQuestion.answer} is the correct answer`);
+
+  //uses the array to generate the possible answers, each with an individual number after "choice" to separate them and check if they are correct
+  choices.forEach((choice) => {
+    const number = choice.dataset["number"];
+    choice.innerText = currentQuestion["choice" + number];
+  });
+
+  availableQuestions.splice(questionsIndex, 1);
+  acceptingAnswers = true;
+
+  countdownValue = 60;
+  countdownEndValue = 0;
+};
+
+let totalCorrect = 0;
+
+choices.forEach((choice, clickedAnswer) => {
+  choice.addEventListener("click", () => {
+    console.log(`You clicked on ${clickedAnswer + 1}`);
+    let finalAnswer = clickedAnswer + 1;
+    console.log("You have stored this answer: ", finalAnswer);
+    if (finalAnswer === currentQuestion.answer) {
+      totalCorrect += 1;
+      console.log("You have answered correct ", totalCorrect, " times");
+      getNewQuestion();
+    } else {
+      getNewQuestion();
+    }
+  });
+});
+
+console.log("Number of correct answers: ", totalCorrect);
+
+// This below needs to be taken off or readjusted
+
+newButton.addEventListener("click", () => {
+  getNewQuestion();
+  countdownValue = 60;
+  countdownEndValue = 0;
+});
 
 //using last week's array based on group decision, modified to fit the code
 
@@ -74,77 +149,3 @@ let questions = [
     answer: 1,
   },
 ];
-
-//declaring the number of questions for the counter, also the points given for each so it can be easily implemented on the results page
-
-const MAX_QUESTIONS = 5;
-const SCORE_POINTS = 20;
-
-startGame = () => {
-  questionCounter = 0;
-  score = 0;
-  availableQuestions = [...questions];
-  getNewQuestion();
-};
-
-getNewQuestion = () => {
-  //the end redirects the page to the next one (results) after it reached the limit of questions, keeps track of points
-  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-    localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("./results.html");
-  }
-  //otherwise shows the number of the next question out of the total which is five in this case, also increments it with one every time
-  questionCounter++;
-  progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
-
-  //makes the questions appear in a random order on each refresh, uses the questions from the array
-  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = availableQuestions[questionsIndex];
-  question.innerText = currentQuestion.question;
-
-  //uses the array to generate the possible answers, each with an individual number after "choice" to separate them and check if they are correct
-  choices.forEach((choice) => {
-    const number = choice.dataset["number"];
-    choice.innerText = currentQuestion["choice" + number];
-  });
-
-  availableQuestions.splice(questionsIndex, 1);
-  acceptingAnswers = true;
-
-  countdownValue = 60;
-  countdownEndValue = 0;
-};
-
-//if you click on the right answer it applies correct otherwise incorrect, didn't specify in css
-choices.forEach((choice) => {
-  choice.addEventListener("click", (e) => {
-    if (!acceptingAnswers) return;
-
-    acceptingAnswers = false;
-    const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
-
-    let classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-
-    //adds 20 points if the answer is right
-    if (classToApply === "correct") {
-      incrementScore(SCORE_POINTS);
-    }
-
-    selectedChoice.parentElement.classList.add(classToApply);
-
-    //gives time to see if the answer is correct (might delete), then jumps to the next question using the function previously written (getNewQuestion())
-    setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
-      getNewQuestion();
-    }, 60000);
-  });
-});
-
-newButton.addEventListener("click", () => {
-  getNewQuestion();
-  countdownValue = 60;
-  countdownEndValue = 0;
-});
-startGame();

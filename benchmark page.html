@@ -19,28 +19,34 @@
             <div class="value-container">60</div>
           </div>
         </div>
+      </div>
+      <div class="main">
         <div class="container">
           <h1 id="question">What is the answer to this question?</h1>
           <div class="flexitems">
             <div class="answers">
-              <div class="choice-container ">
-                <p onclick="getNewQuestion()" class="answer-text" data-number="1">Choice 1</p>
+              <div class="choice-container">
+                <p class="answer-text" data-number="1">Choice 1</p>
               </div>
               <div class="choice-container">
-                <p onclick="getNewQuestion()" class="answer-text" data-number="2">Choice 2</p>
+                <p class="answer-text" data-number="2">Choice 2</p>
+              </div>
+              <div class="choice-container">
+                <p class="answer-text" data-number="3">Choice 3</p>
+              </div>
+              <div class="choice-container">
+                <p class="answer-text" data-number="4">Choice 4</p>
+              </div>
             </div>
-            <div class="choice-container">
-              <p onclick="getNewQuestion()" class="answer-text" data-number="3">Choice 3</p>
-            </div>
-            <div class="choice-container">
-              <p onclick="getNewQuestion()"" class="answer-text" data-number="4">Choice 4</p>
-            
           </div>
         </div>
-      </div>
-      <div id="nextbtn">Next</div>
-      <div class="questionnum">
-        <p id="progressText" class="hud-prefix">Question</p>
+
+        <div class="questionnum">
+          <div id="progressText">Question</div>
+          <div>
+            <button id="nextbtn">Next</button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./benchmark.js"></script>
