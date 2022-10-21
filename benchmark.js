@@ -51,7 +51,7 @@ getNewQuestion = () => {
   //the end redirects the page to the next one (results) after it reached the limit of questions, keeps track of points
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("./results.html");
+    return redirect(totalCorrect, totalWrong); //calling the function to redirect to results page, and passing the dynamic parameters
   }
   //otherwise shows the number of the next question out of the total which is five in this case, also increments it with one every time
   questionCounter++;
@@ -61,8 +61,6 @@ getNewQuestion = () => {
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
-  console.log("This is the current question object: ", currentQuestion);
-  console.log(`The ${currentQuestion.answer} is the correct answer`);
 
   //uses the array to generate the possible answers, each with an individual number after "choice" to separate them and check if they are correct
   choices.forEach((choice) => {
@@ -77,26 +75,46 @@ getNewQuestion = () => {
   countdownEndValue = 0;
 };
 
-let totalCorrect = 0;
+let totalCorrect = 0; //declaring initial values
+let totalWrong = 0;
 
 choices.forEach((choice, clickedAnswer) => {
+  //starting the loop to inspect the answer buttons (choices is an array)
   choice.addEventListener("click", () => {
-    console.log(`You clicked on ${clickedAnswer + 1}`);
-    let finalAnswer = clickedAnswer + 1;
-    console.log("You have stored this answer: ", finalAnswer);
+    //adding event listeners to each answer button
+    console.log(`You clicked on ${clickedAnswer + 1}`); //checking if the clicked register
+    let finalAnswer = clickedAnswer + 1; //declaring variable for storing the index of the clicked answer button
+    console.log("You have stored this answer: ", finalAnswer); //checking to see what index was stored
     if (finalAnswer === currentQuestion.answer) {
-      totalCorrect += 1;
-      console.log("You have answered correct ", totalCorrect, " times");
-      getNewQuestion();
+      //comparing our stored value from above, against the correct answer value
+      totalCorrect += 1; //if true, increments totalCorrect by 1
+
+      getNewQuestion(); //then calls the getNewQuestion function in order to move to the next one
     } else {
-      getNewQuestion();
+      //if false, increment wrong answers by 1
+      totalWrong += 1;
+      getNewQuestion(); //load new question
     }
+    console.log("You have answered correct ", totalCorrect, " times");
   });
+  // redirect(totalCorrect);
 });
 
-console.log("Number of correct answers: ", totalCorrect);
+const redirect = (i, j) => {
+  //declaring the function to pass the dynamic parameters i and j, as long as static ones
+  const numberToPass = i; //dynamic
+  const totalWrong = j; //dynamic
+  const numberOfQuestions = MAX_QUESTIONS; //static
+  window.location.href =
+    "results.html?numberToPass=" +
+    numberToPass +
+    "&numberOfQuestions=" + //syntax for passing multiple parameters to results page
+    numberOfQuestions +
+    "&totalWrong=" +
+    totalWrong;
+};
 
-// This below needs to be taken off or readjusted
+// Next Button to get new question and reset the values for the timer
 
 newButton.addEventListener("click", () => {
   getNewQuestion();

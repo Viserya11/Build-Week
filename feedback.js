@@ -1,10 +1,4 @@
-// let starContainer = document.querySelectorAll(".icon-test");
-// console.log(starContainer);
-
-// for (let i = 0; i < starContainer.length; i++) {
-//   starContainer[i].addEventListener("mouseover", colorTheStars());
-// }
-const stars = document.querySelectorAll(".icon-test");
+const stars = document.querySelectorAll(".icon-test"); //selecting proper IDs
 const starWrapper = document.querySelector(".icons");
 const inputWrapper = document.querySelector(".comment-area");
 const inputField = document.getElementById("input-field");
@@ -12,24 +6,31 @@ const proceed = document.getElementById("action-button");
 console.log(inputField);
 
 stars.forEach((star, hoveredIndex) => {
+  //starting our loop and declaring the hoveredIndex as parameter
   star.addEventListener("mouseover", () => {
-    // console.log(`Star of index ${hoveredIndex + 1} was hovered`);
+    //adding eventlistener for mouseover (for the hover effect)
+    console.log(`Star of index ${hoveredIndex + 1} was hovered`); //Here I checked to see if the index that I hover is registered
     stars.forEach((star, uncoloredIndex) => {
+      //starting another loop with second parameter: uncoloredIndex
       if (uncoloredIndex <= hoveredIndex) {
+        //checking the 2 parameters from above
         star.classList.add("hover");
       } else {
+        //adding or removing class accordingly
         star.classList.remove("hover");
       }
       stars.forEach((star, clickedIndex) => {
+        //starting another loop and declaring the third parameter clickedIndex
         star.addEventListener("click", () => {
-          //   console.log(`Star of index ${clickedIndex + 1} was clicked`);
-          const rating = `Your rating was ${clickedIndex + 1} out of 10`;
+          //adding eventlistener of type click
+          const rating = `Your rating was ${clickedIndex + 1} out of 10`; //checking what rating is registered when clicked
           console.log(rating);
-          starWrapper.classList.add("disabled");
-          inputWrapper.classList.remove("disabled");
+          starWrapper.classList.add("disabled"); //disabling the ability to select another rating after you've already clicked
+          inputWrapper.classList.remove("disabled"); //allowing the user to type on the input field
           inputField.addEventListener("input", () => {
-            proceed.style.backgroundColor = "#01ffff";
-            proceed.classList.add("enabled");
+            //add event listener to see if the user typed something or not
+            proceed.style.backgroundColor = "#01ffff"; //changing the color of the button
+            proceed.classList.add("enabled"); //adding the hover capabilities as well
           });
         });
       });
