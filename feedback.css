@@ -115,13 +115,7 @@ svg {
 }
 
 #input-field:focus {
-  color: #e7e7eb;
-  background-color: unset;
-  border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  outline: none;
 }
 
 #break-line {

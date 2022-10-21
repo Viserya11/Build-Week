@@ -27,7 +27,7 @@ let countdown = setInterval(() => {
   countdownValue--;
   valueContainer.textContent = `${countdownValue}`;
   countdownBar.style.background = `conic-gradient(
-      #ffffff ${countdownValue * 6}deg,
+      #00ffff ${countdownValue * 6}deg,
       #ebbaee ${countdownValue * 6}deg
   )`;
   if (countdownValue == countdownEndValue) {
@@ -71,7 +71,7 @@ getNewQuestion = () => {
   availableQuestions.splice(questionsIndex, 1);
   acceptingAnswers = true;
 
-  countdownValue = 60;
+  countdownValue = 59;
   countdownEndValue = 0;
 };
 
