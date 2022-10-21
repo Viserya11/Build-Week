@@ -9,62 +9,64 @@
   </head>
   <body>
     <div id="container">
-      <div>
+      <div id="header">
         <img
           id="epicode_logo"
           src="./assets/epicode_logo.png"
           alt="Epicode Logo"
         />
       </div>
-      <div id="heading-area">
-        <h1>Results</h1>
-        <p>The summary of your answers:</p>
-      </div>
-      <div id="main">
-        <div id="correct">
-          <p>Correct</p>
-          <div id="correct-percentage">0%</div>
-          <div class="questions">4/6 questions</div>
+      <div id="MAIN">
+        <div id="heading-area">
+          <h1>Results</h1>
+          <p>The summary of your answers:</p>
         </div>
-        <div class="container">
-          <div class="circular-progress">
-            <div class="value-container"></div>
-            <div id="inner-text-passed">
-              <div class="inner-text">
-                <span class="final-greeting">Congratulations!</span>
-                <span class="final-result">You passed the exam.</span>
+        <div id="main">
+          <div id="correct">
+            <p>Correct</p>
+            <div id="correct-percentage">0%</div>
+            <div id="correctQuestions" class="questions">4/6 questions</div>
+          </div>
+          <div class="container">
+            <div class="circular-progress">
+              <div class="value-container"></div>
+              <div id="inner-text-passed">
+                <div class="inner-text">
+                  <span class="final-greeting">Congratulations!</span>
+                  <span class="final-result">You passed the exam.</span>
+                </div>
+                <div class="inner-text">
+                  <span class="final-message"
+                    >We'll send you the certificate</span
+                  >
+                  <span class="final-message">in few minutes.</span>
+                  <span class="final-message">Check your email (including</span>
+                  <span class="final-message">promotions / spam folder)</span>
+                </div>
               </div>
-              <div class="inner-text">
-                <span class="final-message"
-                  >We'll send you the certificate</span
-                >
-                <span class="final-message">in few minutes.</span>
-                <span class="final-message">Check your email (including</span>
-                <span class="final-message">promotions / spam folder)</span>
-              </div>
-            </div>
-            <div class="hidden" id="inner-text-failed">
-              <div class="inner-text">
-                <span class="final-greeting">We are sorry!</span>
-                <span class="final-result">You didn't pass the exam.</span>
-              </div>
-              <div class="inner-text">
-                <span class="final-message">We'll send you more info</span>
-                <span class="final-message">in few minutes.</span>
-                <span class="final-message">Check your email (including</span>
-                <span class="final-message">promotions / spam folder)</span>
+              <div class="hidden" id="inner-text-failed">
+                <div class="inner-text">
+                  <span class="final-greeting">We are sorry!</span>
+                  <span class="final-result">You didn't pass the exam.</span>
+                </div>
+                <div class="inner-text">
+                  <span class="final-message">We'll send you more info</span>
+                  <span class="final-message">in few minutes.</span>
+                  <span class="final-message">Check your email (including</span>
+                  <span class="final-message">promotions / spam folder)</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="wrong">
-          <p>Wrong</p>
-          <div id="wrong-percentage">0%</div>
-          <div class="questions">2/6 questions</div>
+          <div id="wrong">
+            <p>Wrong</p>
+            <div id="wrong-percentage">0%</div>
+            <div id="wrongQuestions" class="questions">2/6 questions</div>
+          </div>
         </div>
       </div>
       <div id="bottom-area">
-        <a href="./feedback page.html"><button id="rateUs">RATE US</button></a>
+        <a href="./feedback.html"><button id="rateUs">RATE US</button></a>
       </div>
     </div>
     <script src="./results.js"></script>

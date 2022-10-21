@@ -4,6 +4,12 @@ body {
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #container {
   background-image: url("./assets/bg.jpg");
   color: #e7e7eb;
@@ -11,18 +17,23 @@ body {
   background-size: cover;
 }
 
+.item {
+  height: 15vh;
+}
+
 #epicode_logo {
   width: 15%;
   margin-left: 10%;
   margin-top: 1%;
+  user-select: none;
 }
 
 #main {
-  height: 85%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding-left: 5%;
   padding-right: 5%;
@@ -34,10 +45,10 @@ body {
   margin-bottom: 0;
   font-family: Outfit;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 span {
@@ -103,22 +114,36 @@ svg {
   padding-left: 8.5%;
 }
 
+#input-field:focus {
+  outline: none;
+}
+
 #break-line {
   background-color: #d20094;
   height: 1px;
   width: 100%;
 }
 
+#bottom-area {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #action-button {
-  margin-top: 10%;
+  font-weight: bold;
+  border: none;
   width: 200px;
   height: 60px;
-  font-family: Outfit;
-  font-weight: bold;
-  font-size: 16px;
   background: #1daabb;
-  border: none;
-  transition: box-shadow 0.5s ease;
+  color: #143e61;
+  text-align: center;
+  font-size: 22px;
+  font-family: Outfit;
+  transition: box-shadow 0.2s ease;
+  user-select: none;
 }
 
 .enabled {
@@ -128,4 +153,5 @@ svg {
 .enabled:hover {
   box-shadow: 0 0 25px #01ffff;
   cursor: pointer;
+  user-select: none;
 }

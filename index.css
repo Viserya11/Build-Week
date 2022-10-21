@@ -12,27 +12,30 @@ body {
   font-family: "outfit", sans-serif;
 }
 
-.logo {
-  margin-top: 48px;
-  width: 150px;
-  height: 80px;
-  margin-top: 50px;
-  margin-left: 9%;
-}
-
 .logo img {
-  width: 100%;
+  width: 15%;
+  margin-left: 10%;
+  margin-top: 1%;
+  user-select: none;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 1440px;
-  margin: 0 auto;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 70vh;
 }
 
 .item {
-  margin-left: 9%;
+  margin-left: 10%;
   padding: 0;
 }
 
@@ -73,11 +76,19 @@ h2 {
 .instruct ul {
   color: #b8bbc7;
   font-weight: 300;
-  margin-top: 50px;
-  margin-bottom: 70px;
+  /* margin-top: 50px;
+  margin-bottom: 70px; */
   line-height: 1em;
   font-size: 17px;
   font-family: "Inter", sans-serif;
+}
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
 }
 
 label {
@@ -89,28 +100,45 @@ label {
 }
 
 .check-box {
-  color: #0b113b;
+  color: #eee;
   width: 21px;
   height: 20px;
   padding: 0;
   margin: 0;
-  appearance: none;
+  /* appearance: none; */
   border: 2px solid #ddd;
   vertical-align: bottom;
   cursor: pointer;
+}
+
+.check-box input:checked {
+  color: #01ffff;
+}
+
+#cbox {
+  width: 400px;
+  height: 60px;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+}
+
+#action-button {
+  margin-right: 10%;
 }
 
 #inactivebtn {
   font-weight: bold;
   border: none;
   width: 200px;
-  height: 61px;
+  height: 60px;
   background: #1daabb;
   color: #143e61;
   text-align: center;
   font-size: 22px;
-  font-family: "outfit";
-  transition: box-shadow 0.5s ease;
+  font-family: Outfit;
+  transition: box-shadow 0.2s ease;
+  user-select: none;
 }
 
 .disabled {
@@ -118,7 +146,7 @@ label {
 }
 
 .enabledbtn {
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .enabledbtn:hover {
@@ -132,11 +160,3 @@ label {
   box-shadow: 0 0 40px #01ffff;
 }
 */
-
-.item-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  margin-left: 30px;
-}

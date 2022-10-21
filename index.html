@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Welcome Page Feature</title>
   </head>
   <body>
@@ -12,30 +12,32 @@
       <div class="logo">
         <img alt="Epicode logo" src="./assets/epicode_logo.png" />
       </div>
+      <div class="main">
+        <div class="item header">
+          <h1>Welcome to</h1>
+          <h2>your exam</h2>
+        </div>
 
-      <div class="item header">
-        <h1>Welcome to</h1>
-        <h2>your exam</h2>
-      </div>
-
-      <div class="item instruct">
-        <h3>Instructions</h3>
-        <p>
-          We don't expect most engineers to know the answers to all of these
-          <br />questions, so don't worry if you're unsure of a few of them.
-        </p>
-        <ul>
-          <li>
-            Each question is <b>timed</b> and can only be <b>answered once.</b>
-          </li>
-          <br />
-          <li>
-            Changing browser tab or opening other windows will
-            <b>invalidate the question.</b>
-          </li>
-          <br />
-          <li>This exam will take approx. <b>0-5 minutes.</b></li>
-        </ul>
+        <div class="item instruct">
+          <h3>Instructions</h3>
+          <p>
+            We don't expect most engineers to know the answers to all of these
+            <br />questions, so don't worry if you're unsure of a few of them.
+          </p>
+          <ul>
+            <li>
+              Each question is <b>timed</b> and can only be
+              <b>answered once.</b>
+            </li>
+            <br />
+            <li>
+              Changing browser tab or opening other windows will
+              <b>invalidate the question.</b>
+            </li>
+            <br />
+            <li>This exam will take approx. <b>0-5 minutes.</b></li>
+          </ul>
+        </div>
       </div>
       <div class="item-wrapper">
         <div id="cbox" class="item">
@@ -50,9 +52,11 @@
             I promise to answer myself without help from anyone</label
           >
         </div>
-        <a href="benchmark page.html"
-          ><button id="inactivebtn">PROCEED</button></a
-        >
+        <div id="action-button">
+          <a id="anchorTag" class="disabled" href="./benchmark.html"
+            ><button id="inactivebtn" class="disabled">PROCEED</button></a
+          >
+        </div>
       </div>
     </div>
 
