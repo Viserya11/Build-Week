@@ -3,6 +3,7 @@ const starWrapper = document.querySelector(".icons");
 const inputWrapper = document.querySelector(".comment-area");
 const inputField = document.getElementById("input-field");
 const proceed = document.getElementById("action-button");
+let anchorTag = document.getElementById("anchorTag");
 console.log(inputField);
 
 stars.forEach((star, hoveredIndex) => {
@@ -30,6 +31,7 @@ stars.forEach((star, hoveredIndex) => {
           inputField.addEventListener("input", () => {
             //add event listener to see if the user typed something or not
             proceed.style.backgroundColor = "#01ffff"; //changing the color of the button
+            anchorTag.classList.remove("disabled");
             proceed.classList.add("enabled"); //adding the hover capabilities as well
           });
         });
